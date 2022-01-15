@@ -1,0 +1,13 @@
+tensorflow==1.14.0
+scikit-learn>=0.19.2
+numpy
+pandas
+matplotlib
+networkx
+openpyxl
+tqdm
+sklearn
+scipy
+seaborn
+statannot
+scikit_posthocs

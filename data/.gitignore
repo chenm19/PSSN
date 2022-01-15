@@ -1,0 +1,6 @@
+.idea/*
+__pycache__/*
+~*
+atn_data_x_n.npy
+.DS_Store
+pred_1500.npy
