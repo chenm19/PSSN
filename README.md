@@ -26,8 +26,8 @@ If you use this code, please cite: https://doi.org/xxxx-xxxx.
 | 1/7/2021   | v10.0   | Iota         | data_y is in shape 320\*1\*2                                |
 | 1/10/2021  | v10.5   | Final        | based on eta                                                |
 
-| Python Version | Platform |
-| ---- | ---- |
+| Python Version         | Platform                |
+|------------------------|-------------------------|
 | python 3.6 / 3.7 / 3.8 | Linux / Windows / MacOS |
 
 ****
