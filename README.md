@@ -8,9 +8,9 @@ Multimodal Spatio-temporal Stratification Network (MSSN) combines the power of s
 
 If you use this code, please cite: https://doi.org/xxxx-xxxx.
  
-| Project Name | Authors                                                          |
-| ---- |------------------------------------------------------------------|
-| ATN_Auto | Enze Xu (xue20@wfu.edu), Jingwen Zhang (zhanj318@wfu.edu) et al.|
+| Project Name | Authors                                                     |
+|--------------|-------------------------------------------------------------|
+| MSSN         | Enze Xu (xue20@wfu.edu), Jingwen Zhang, Minghan Chen et al. |
 
 | Date       | Version | Version name | Comments                                                    |
 |------------|---------|--------------|-------------------------------------------------------------|
@@ -28,7 +28,7 @@ If you use this code, please cite: https://doi.org/xxxx-xxxx.
 
 | Python Version | Platform |
 | ---- | ---- |
-| python3.5 / 3.6 / 3.7 / 3.8 | Linux / Windows / MacOS |
+| python 3.6 / 3.7 / 3.8 | Linux / Windows / MacOS |
 
 ****
 # Catalog

@@ -540,7 +540,7 @@ def get_heat_map_data(main_path, K, label, data_type):
     pt_ids = np.load("data/ptid.npy", allow_pickle=True)
     pt_dic = load_patient_dictionary(main_path, data_type)
 
-    data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement.xlsx', engine=get_engine())
+    data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement_fake.xlsx', engine=get_engine())
     target_labels = CLINICAL_LABELS
     data = data[["PTID", "EXAMDATE"] + target_labels]
     data = data[pd.notnull(data["EcogPtMem"])]
@@ -578,7 +578,7 @@ def get_heat_map_data(main_path, K, label, data_type):
 def make_heat_map_data_box(main_path, save_path, label, data_type):
     pt_ids = np.load("data/ptid.npy", allow_pickle=True)
     pt_dic = load_patient_dictionary(main_path, data_type)
-    data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement.xlsx', engine=get_engine())
+    data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement_fake.xlsx', engine=get_engine())
     target_labels = CLINICAL_LABELS
     data = data[["PTID", "EXAMDATE"] + target_labels]
     data = data[pd.notnull(data["EcogPtMem"])]
@@ -604,7 +604,7 @@ def one_time_tsne_data_x(main_path, label, data_name):
     pt_ids = np.load("data/ptid.npy", allow_pickle=True)
     pt_dic = load_patient_dictionary(main_path, data_name[:-1])
     data_x_raw = load_data(main_path, "/data/data_x/data_x_{}.npy".format(data_name))
-    # data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement.xlsx', engine=get_engine())
+    # data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement_fake.xlsx', engine=get_engine())
     # target_labels = CLINICAL_LABELS
     # data = data[["PTID", "EXAMDATE"] + target_labels]
     # data = data[pd.notnull(data["EcogPtMem"])]
@@ -630,7 +630,7 @@ def one_time_tsne_data_y(main_path, label, data_name):
     pt_ids = np.load("data/ptid.npy", allow_pickle=True)
     pt_dic = load_patient_dictionary(main_path, data_name[:-1])
     data_y = load_data(main_path, "/data/data_y/data_y_{}.npy".format(data_name[:-1]))
-    # data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement.xlsx', engine=get_engine())
+    # data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement_fake.xlsx', engine=get_engine())
     # target_labels = CLINICAL_LABELS
     # data = data[["PTID", "EXAMDATE"] + target_labels]
     # data = data[pd.notnull(data["EcogPtMem"])]
@@ -698,7 +698,7 @@ def get_heat_map_data_inter(main_path, K, label, data_type, flag=False):
     pt_ids = np.load("data/ptid.npy", allow_pickle=True)
     pt_dic = load_patient_dictionary(main_path, data_type)
 
-    data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement.xlsx', engine=get_engine())
+    data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement_fake.xlsx', engine=get_engine())
     target_labels = CLINICAL_LABELS
     data = data[["PTID", "EXAMDATE"] + target_labels + ["MMSE", "CDRSB", "ADAS13"]]
     data = data[pd.notnull(data["EcogPtMem"])]
@@ -894,7 +894,7 @@ def get_start_index(main_path, opt):
 def build_cn_ad_labels(main_path, data_type):
     pt_ids = np.load("data/ptid.npy", allow_pickle=True)
     pt_dic = load_patient_dictionary(main_path, data_type)
-    clinical_score = pd.read_excel(main_path + 'data/MRI_information_All_Measurement.xlsx', engine=get_engine())
+    clinical_score = pd.read_excel(main_path + 'data/MRI_information_All_Measurement_fake.xlsx', engine=get_engine())
     cn_ad_labels = []
     for pt_id in pt_ids:  # [148*148，[label tuple]，VISCODE，patientID]
         tmp_labels = []
@@ -983,7 +983,7 @@ def name_label(label):
 
 def build_patient_dictionary(main_path):
     pt_ids = np.load("data/ptid.npy", allow_pickle=True)
-    clinical_score = pd.read_excel(main_path + 'data/MRI_information_All_Measurement.xlsx', engine=get_engine())
+    clinical_score = pd.read_excel(main_path + 'data/MRI_information_All_Measurement_fake.xlsx', engine=get_engine())
     dic = dict()
     # ['EcogPtMem','EcogPtLang','EcogPtVisspat','EcogPtPlan','EcogPtOrgan','EcogPtDivatt','EcogPtTotal','EcogSPMem','EcogSPLang','EcogSPVisspat','EcogSPPlan','EcogSPOrgan','EcogSPDivatt','EcogSPTotal']
     for one_pt_id in tqdm(pt_ids):
@@ -1132,7 +1132,7 @@ def create_empty_folders(main_path, data_name):
 
 
 def count_pt_id_patient_lines(main_path):
-    df = pd.read_excel(main_path + 'data/MRI_information_All_Measurement.xlsx', engine=get_engine())
+    df = pd.read_excel(main_path + 'data/MRI_information_All_Measurement_fake.xlsx', engine=get_engine())
     pt_ids = np.load("data/ptid.npy", allow_pickle=True)
     dic = dict()
     for one_key in pt_ids:
@@ -1182,7 +1182,7 @@ def split_periods_delta(periods):
 
 
 def build_data_x_y_gamma(main_path, max_length=9):
-    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement.xlsx", engine=get_engine())
+    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement_fake.xlsx", engine=get_engine())
     target_labels = ["MMSE", "CDRSB", "ADAS13"]
     df = df[["PTID", "EXAMDATE"] + target_labels + ["EcogPtMem"]]
     df = df[pd.notnull(df["EcogPtMem"])]
@@ -1315,7 +1315,7 @@ def build_data_x_y_gamma(main_path, max_length=9):
 
 
 def build_data_x_y_delta(main_path, max_length=9):
-    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement.xlsx", engine=get_engine())
+    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement_fake.xlsx", engine=get_engine())
     target_labels = ["MMSE", "CDRSB", "ADAS13"]
     df = df[["PTID", "EXAMDATE"] + target_labels + ["EcogPtMem"]]
     df = df[pd.notnull(df["EcogPtMem"])]
@@ -1451,7 +1451,7 @@ def build_data_x_y_delta(main_path, max_length=9):
 
 
 def build_data_x_y_epsilon(main_path, max_length=9):
-    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement.xlsx", engine=get_engine())
+    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement_fake.xlsx", engine=get_engine())
     target_labels = ["ADAS13"]
     df = df[["PTID", "EXAMDATE"] + target_labels + ["EcogPtMem"]]
     df = df[pd.notnull(df["EcogPtMem"])]
@@ -1587,7 +1587,7 @@ def build_data_x_y_epsilon(main_path, max_length=9):
 
 
 def build_data_x_y_zeta(main_path, max_length=9):
-    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement.xlsx", engine=get_engine())
+    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement_fake.xlsx", engine=get_engine())
     target_labels = ['EcogPtMem', 'EcogPtLang', 'EcogPtVisspat', 'EcogPtPlan', 'EcogPtOrgan', 'EcogPtDivatt', 'EcogPtTotal']
     df = df[["PTID", "EXAMDATE"] + target_labels]
     df = df[pd.notnull(df["EcogPtMem"])]
@@ -1723,7 +1723,7 @@ def build_data_x_y_zeta(main_path, max_length=9):
 
 
 def build_data_x_y_eta(main_path, max_length=9):
-    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement.xlsx", engine=get_engine())
+    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement_fake.xlsx", engine=get_engine())
     target_labels = ["CDRSB", "ADAS13"]
     df = df[["PTID", "EXAMDATE"] + target_labels + ["EcogPtMem"]]
     df = df[pd.notnull(df["EcogPtMem"])]
@@ -1859,7 +1859,7 @@ def build_data_x_y_eta(main_path, max_length=9):
 
 
 def build_data_x_y_theta(main_path, max_length=5):
-    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement.xlsx", engine=get_engine())
+    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement_fake.xlsx", engine=get_engine())
     target_labels = ["CDRSB", "ADAS13"]
     df = df[["PTID", "EXAMDATE"] + target_labels + ["EcogPtMem"]]
     df = df[pd.notnull(df["EcogPtMem"])]
@@ -1999,7 +1999,7 @@ def build_data_x_y_theta(main_path, max_length=5):
 
 
 def build_data_x_y_iota(main_path, max_length=1):
-    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement.xlsx", engine=get_engine())
+    df = pd.read_excel(main_path + "data/MRI_information_All_Measurement_fake.xlsx", engine=get_engine())
     target_labels = ["CDRSB", "ADAS13"]
     df = df[["PTID", "EXAMDATE"] + target_labels + ["EcogPtMem"]]
     df = df[pd.notnull(df["EcogPtMem"])]
@@ -2434,7 +2434,7 @@ def build_table_data(main_path, label, data_name):
     pt_ids = np.load("data/ptid.npy", allow_pickle=True)
     pt_dic = load_patient_dictionary(main_path, data_name[:-1])
     #
-    # data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement.xlsx', engine=get_engine())
+    # data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement_fake.xlsx', engine=get_engine())
     # target_labels = CLINICAL_LABELS
     # data = data[["PTID", "EXAMDATE"] + target_labels + ["CDRSB", "ADAS13"]]
     # data = data[pd.notnull(data["EcogPtMem"])]
@@ -2656,7 +2656,7 @@ if __name__ == "__main__":
             pt_ids = np.load("data/ptid.npy", allow_pickle=True)
             pt_dic = load_patient_dictionary(main_path, data_type)
 
-            data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement.xlsx', engine=get_engine())
+            data = pd.read_excel(main_path + 'data/MRI_information_All_Measurement_fake.xlsx', engine=get_engine())
             target_labels = CLINICAL_LABELS
             data = data[["PTID", "EXAMDATE"] + target_labels + ["MMSE", "CDRSB", "ADAS13"]]
             data = data[pd.notnull(data["EcogPtMem"])]
@@ -2862,7 +2862,7 @@ if __name__ == "__main__":
     # res1 = get_k_means_result(main_path)
     # res2 = get_ac_tpc_result(main_path, 1146)
     # draw_heat_map_2(res1, res2)
-    # data = pd.read_excel("data/MRI_information_All_Measurement.xlsx", engine="openpyxl")
+    # data = pd.read_excel("data/MRI_information_All_Measurement_fake.xlsx", engine="openpyxl")
     # target_labels = ["MMSE", "CDRSB", "ADAS13"]
     # data = data[["PTID", "EXAMDATE"] + target_labels]
     # print(data)
