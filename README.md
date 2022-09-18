@@ -10,7 +10,7 @@ If you use this code, please cite: https://doi.org/xxxx-xxxx.
  
 | Project Name | Authors                                                     |
 |--------------|-------------------------------------------------------------|
-| MSSN         | Enze Xu (xue20@wfu.edu), Jingwen Zhang, Minghan Chen et al. |
+| PSSN         | Enze Xu (xue20@wfu.edu), Jingwen Zhang, Minghan Chen et al. |
 
 | Date       | Version | Version name | Comments                                                    |
 |------------|---------|--------------|-------------------------------------------------------------|
