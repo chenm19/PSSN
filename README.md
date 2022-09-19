@@ -4,7 +4,7 @@ PSSN
 
 ****
 
-Multimodal Spatio-temporal Stratification Network (MSSN) combines the power of systems biology and deep learning. To the best of our knowledge, our ensembled multimodality framework is the first computational tool that jointly considers AT[N] dynamics, structural network (Net), and clinical assessments for population stratification, integrating interactive and diffusive nature of biomarkers into neural networks.
+Pathology Steered Stratification Network (PSSN) combines the power of systems biology and deep learning. To the best of our knowledge, our ensembled multimodality framework is the first computational tool that jointly considers AT[N] dynamics, structural network (Net), and clinical assessments for population stratification, integrating interactive and diffusive nature of biomarkers into neural networks.
 
 If you use this code, please cite: https://doi.org/xxxx-xxxx.
  
